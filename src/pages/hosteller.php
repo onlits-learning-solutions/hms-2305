@@ -45,8 +45,8 @@ $Hostellers = $Hosteller->index();
                         <td><?= $Hosteller['middle_name'] ?></td>
                         <td><?= $Hosteller['last_name'] ?></td>
                         <td><?= $Hosteller['contact_no'] ?></td>
-                        <td><a href="<?php echo 'edit-student.php?id=' . $Hosteller['id']?>">Edit</a></td>
-                        <td><a href="<?php echo 'delete-student.php?id=' . $Hosteller['id']?>">Delete</a></td>
+                        <td><a href="<?php echo 'edit-Hosteller.php?id=' . $Hosteller['id']?>">Edit</a></td>
+                        <td><a href="<?php echo 'delete-Hosteller.php?id=' . $Hosteller['id']?>">Delete</a></td>
                     </tr>
                 <?php
                 }
