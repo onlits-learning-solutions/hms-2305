@@ -1,0 +1,30 @@
+* {
+    margin: 0px;
+}
+/* ------------ Layout ------------ */
+.main-container {
+    display: grid;
+    grid-template-rows: 50px auto;
+}
+
+.top-nav {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.sidebar {
+    background-color: gray;
+    min-height: 550px;
+    padding: 10px;
+}
+
+.main-content {
+    min-height: 550px;
+    padding: 10px;
+}
+
