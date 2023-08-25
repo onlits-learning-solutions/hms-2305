@@ -8,7 +8,7 @@ require "../autoload.php";
     if(isset($_POST['submit'])) {
         $Hostellervar->edit($_POST);
     } else {
-        $Hosteller = $Hostellervar->details($_GET['id']);
+        $Hosteller = $Hostellervar->details($_GET['hosteller_id']);
     }
 ?>
 <!DOCTYPE html>
