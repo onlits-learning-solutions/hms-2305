@@ -57,8 +57,8 @@ $Employees = $Employee->index();
                                 <td><?= $Employee['email'] ?></td>
                                 <td><?= $Employee['designation'] ?></td>
                                 <td><?= $Employee['fathers_name'] ?></td>
-                                <td><a href="<?php echo 'edit-Employee.php?id=' . $Employee['employee_id'] ?>">Edit</a></td>
-                                <td><a href="<?php echo 'delete-Employee.php?id=' . $Employee['employee_id'] ?>">Delete</a></td>
+                                <td><a href="<?php echo 'edit-Employee.php?employee_id=' . $Employee['employee_id'] ?>">Edit</a></td>
+                                <td><a href="<?php echo 'delete-Employee.php?employee_id=' . $Employee['employee_id'] ?>">Delete</a></td>
                             </tr>
                         <?php
                         }

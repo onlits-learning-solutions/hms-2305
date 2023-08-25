@@ -35,9 +35,9 @@ class Employee
         header("location:Employee.php");
     }
 
-    public function details(int $id)
+    public function details(int $employee_id)
     {
-        $sql = "SELECT * FROM Employee WHERE id=$id";
+        $sql = "SELECT * FROM Employee WHERE Employee_Id=$employee_id";
         $result = $this->connection->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
@@ -45,21 +45,25 @@ class Employee
         return null;
     }
 
-    public function delete(int $id)
+    public function delete(int $Employee_id)
     {
-        $sql = "DELETE FROM Employee WHERE id=$id";
+        $sql = "DELETE FROM Employee WHERE employee_id=$Employee_id";
         $this->connection->query($sql);
         header("location:Employee.php");
     }
 
     public function edit($Employee)
     {
-        $id = $Employee['id'];
-        $first_name = $Employee['first_name'];
-        $middle_name = $Employee['middle_name'];
-        $last_name = $Employee['last_name'];
+        $employee_id = $Employee['employee_id'];
+        $name = $Employee['name'];
+        $gender = $Employee['gender'];
+        $date_of_birth = $Employee['date_of_birth'];
         $contact_no = $Employee['contact_no'];
-        $sql = "UPDATE Employee SET first_name='$first_name', middle_name='$middle_name', last_name='$last_name', contact_no='$contact_no' WHERE id=$id";
+        $email = $Employee['email'];
+        $designation =$Employee['designation'];
+        $fathers_name=$Employee['fathers_name'];
+
+        $sql = "UPDATE Employee SET name='$name', gender='$gender', date_of_birth='$date_of_birth', contact_no='$contact_no', email='$email', designation='$designation', fathers_name='$fathers_name' WHERE employee_id=$employee_id";
         $this->connection->query($sql);
         header("location:Employee.php");
     }

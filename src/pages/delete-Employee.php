@@ -3,4 +3,4 @@ use Hostel\Employee\Employee;
 require '../autoload.php';
 
 $Employeevar =new Employee();
-$Employeevar->delete($_GET['id']);
+$Employeevar->delete($_GET['employee_id']);
