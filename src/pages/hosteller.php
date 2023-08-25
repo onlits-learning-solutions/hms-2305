@@ -14,44 +14,60 @@ $Hostellers = $Hosteller->index();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Read Hosteller</title>
-    <link rel="stylesheet" href="../site.css">
+    <title>Hostel Management System - Layout</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="grid-container">
-        <aside>
-            <?php require('../sidebar.php')?>
-        </aside>
-        <main>
-            <h1>List of $Hostellers</h1>
-            <a href="new-Hpsteller.php" class="btn btn-primary m-3">New Hosteller</a>
-            <table class="table" cellspacing="0">
-                <tr>
-                    <th>Id</th>
-                    <th>First Name</th>
-                    <th>Middle Name</th>
-                    <th>Last name</th>
-                    <th>Contact Number</th>
-                    <th></th>
-                    <th></th>
-                </tr>
+    <div class="main-container">
+        <div class="top-nav">
+            <?php require 'topnav.php' ?>
+        </div>
+        <main class="main">
+            <div class="sidebar">
+                <?php require 'sidebar.php'; ?>
+            </div>
+            <div class="main-content">
+                <h1>List of Hostellers</h1>
+                <a href="new-Hpsteller.php" class="btn btn-primary m-3">New Hosteller</a>
                 <?php
-                foreach ($Hostellers as $Hosteller) {
+                if ($Hostellers != null) {
                 ?>
-                    <tr>
-                        <td><?= $Hosteller['id'] ?></td>
-                        <td><?= $Hosteller['first_name'] ?></td>
-                        <td><?= $Hosteller['middle_name'] ?></td>
-                        <td><?= $Hosteller['last_name'] ?></td>
-                        <td><?= $Hosteller['contact_no'] ?></td>
-                        <td><a href="<?php echo 'edit-Hosteller.php?id=' . $Hosteller['id']?>">Edit</a></td>
-                        <td><a href="<?php echo 'delete-Hosteller.php?id=' . $Hosteller['id']?>">Delete</a></td>
-                    </tr>
+                    <table class="table" cellspacing="0">
+                        <tr>
+                            <th>Id</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last name</th>
+                            <th>Contact Number</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <?php
+                        foreach ($Hostellers as $Hosteller) {
+                        ?>
+                            <tr>
+                                <td><?= $Hosteller['id'] ?></td>
+                                <td><?= $Hosteller['first_name'] ?></td>
+                                <td><?= $Hosteller['middle_name'] ?></td>
+                                <td><?= $Hosteller['last_name'] ?></td>
+                                <td><?= $Hosteller['contact_no'] ?></td>
+                                <td><a href="<?php echo 'edit-Hosteller.php?id=' . $Hosteller['id'] ?>">Edit</a></td>
+                                <td><a href="<?php echo 'delete-Hosteller.php?id=' . $Hosteller['id'] ?>">Delete</a></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
                 <?php
+                } else {
+                    echo "</p>No Records found!</p>";
                 }
                 ?>
-            </table>
+                <footer>
+                    <?php require 'footer.php' ?>
+                </footer>
+            </div>
         </main>
     </div>
 </body>
