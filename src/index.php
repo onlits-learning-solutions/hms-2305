@@ -12,7 +12,7 @@ if($_GET['error'] == 99)
     $error_message = "Invalid username or password! Please retry!";
 }
 
-if(isset($_POST['login']) {
+if(isset($_POST['login'])) {
 $result = User::authenticate($_POST);
 
 if(isset($result)) {
@@ -54,7 +54,7 @@ if(isset($result)) {
                 <label for="user_id">User ID</label>
                 <input type="text" name="user_id" id="user_id">
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="password">
                 <button name="login">Login</button>
                 <label for="" id="error_message"><?= $error_message?></label>
             </form>
