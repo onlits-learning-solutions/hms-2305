@@ -29,7 +29,7 @@ $Hostellers = $Hosteller->index();
             </div>
             <div class="main-content">
                 <h1>List of Hostellers</h1>
-                <a href="new-Hpsteller.php" class="btn btn-primary m-3">New Hosteller</a>
+                <a href="new-Hosteller.php" class="btn btn-primary m-3">New Hosteller</a>
                 <?php
                 if ($Hostellers != null) {
                 ?>

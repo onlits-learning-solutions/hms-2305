@@ -28,7 +28,7 @@ $Employees = $Employee->index();
             </div>
             <div class="main-content">
                 <h1>List of Employees</h1>
-                <a href="new-Employee.php" class="btn btn-primary m-3">New Employee</a>
+                <a href="new-employee.php" class="btn btn-primary m-3">New Employee</a>
                 <?php
                 if ($Employees != null) {
                 ?>
