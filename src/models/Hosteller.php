@@ -23,18 +23,20 @@ class Hosteller
 
     public function create($Hosteller)
     {
-        $first_name = $Hosteller['first_name'];
-        $middle_name = $Hosteller['middle_name'];
-        $last_name = $Hosteller['last_name'];
+        $name = $Hosteller['name'];
+        $gender = $Hosteller['gender'];
+        $date_of_birth = $Hosteller['date_of_birth'];
         $contact_no = $Hosteller['contact_no'];
-        $sql = "INSERT INTO Hosteller(first_name, middle_name, last_name, contact_no) VALUES('$first_name', '$middle_name', '$last_name', '$contact_no')";
+        $email = $Hosteller['email'];
+        $fathers_name = $Hosteller['fathers_name'];
+        $sql = "INSERT INTO Hosteller(name, gender, date_of_birth, contact_no, email,fathers_name) VALUES('$name', '$gender', '$date_of_birth', '$contact_no', '$email','$fathers_name')";
         $this->connection->query($sql);
         header("location:Hosteller.php");
     }
 
     public function details(int $id)
     {
-        $sql = "SELECT * FROM Hosteller WHERE id=$id";
+        $sql = "SELECT * FROM Hosteller WHERE  hosteller_id=$id";
         $result = $this->connection->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();          
@@ -44,19 +46,22 @@ class Hosteller
 
     public function edit($Hosteller)
     {
-        $id = $Hosteller['id'];
-        $first_name = $Hosteller['first_name'];
-        $middle_name = $Hosteller['middle_name'];
-        $last_name = $Hosteller['last_name'];
+        $Hosteller_id = $Hosteller['hosteller_id'];
+        $name = $Hosteller['name'];
+        $gender = $Hosteller['gender'];
+        $date_of_birth = $Hosteller['date_of_birth'];
         $contact_no = $Hosteller['contact_no'];
-        $sql = "UPDATE Hosteller SET first_name='$first_name', middle_name='$middle_name', last_name='$last_name', contact_no='$contact_no' WHERE id=$id";
+        $email = $Hosteller['email'];
+        $fathers_name=$Hosteller['fathers_name'];
+
+        $sql = "UPDATE Hosteller SET name='$name', gender='$gender', date_of_birth='$date_of_birth', contact_no='$contact_no', email='$email',fathers_name='$fathers_name' WHERE Hosteller_id=$Hosteller_id";
         $this->connection->query($sql);
         header("location:Hosteller.php");
     }
 
-    public function delete(int $id)
+    public function delete(int $Hosteller_id)
     {
-        $sql = "DELETE FROM Hosteller WHERE id=$id";
+        $sql = "DELETE FROM Hosteller WHERE hosteller_id=$Hosteller_id";
         $this->connection->query($sql);
         header("location:Hosteller.php");
     }

@@ -34,8 +34,8 @@ $rooms = $room->index();
                 ?>
                     <table class="table" cellspacing="0">
                         <tr>
-                            <th>room_no</th>
-                            <th>room_type</th>
+                            <th>Room No</th>
+                            <th>Room Type</th>
                             <th></th>
                             <th></th>
                         </tr>

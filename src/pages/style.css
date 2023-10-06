@@ -8,8 +8,8 @@
 }
 
 .top-nav {
-    background-color: lightgray;
-    padding: 10px;
+    background-color: brown;
+    padding: 5px;
 }
 
 .main {
@@ -39,10 +39,16 @@
 }
 
 /*------------------- Form --------------------------------- */
-input {
+input, select {
     display: block;
     padding: 5px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 90%;
 }
 
+/* -------------------2-col-grid ------------------- */
+.grid-col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}

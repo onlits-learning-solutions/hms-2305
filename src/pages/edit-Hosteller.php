@@ -8,7 +8,7 @@ require "../autoload.php";
     if(isset($_POST['submit'])) {
         $Hostellervar->edit($_POST);
     } else {
-        $Hosteller = $Hostellervar->details($_GET['hosteller_id']);
+        $Hosteller = $Hostellervar->details($_GET['id']);
     }
 ?>
 <!DOCTYPE html>
@@ -31,17 +31,21 @@ require "../autoload.php";
         <main>
             <h1>Edit Hosteller</h1>
             <form action="" method="post">
-                <label for="">ID</label>
-                <input type="text" name="id" id="id" readonly value="<?= $Hosteller['id']?>">
-                <label for="">First Name</label>
-                <input type="text" name="first_name" id="first_name" value="<?= $Hosteller['first_name']?>">
-                <label for="">Middle Name</label>
-                <input type="text" name="middle_name" id="middle_name" value="<?= $Hosteller['middle_name']?>">
-                <label for="">Last Name</label>
-                <input type="text" name="last_name" id="last_name" value="<?= $Hosteller['last_name']?>">
-                <label for="">Contact Number</label>
-                <input type="text" name="contact_no" id="contact_no" value="<?= $Hosteller['contact_no']?>" maxlength="10" minlength="10">
-                <button name="submit">Submit</button>
+            <label for="">Hosteller ID</label>
+                    <input type="text" name="hosteller_id" id="hosteller_id" readonly value="<?= $Hosteller['hosteller_id'] ?>">
+                    <label for="">Name</label>
+                    <input type="text" name="name" id="name" value="<?= $Hosteller['name'] ?>">
+                    <label for="">Gender</label>
+                    <input type="text" name="gender" id="gender" value="<?= $Hosteller['gender'] ?>">
+                    <label for="">Date of Birth</label>
+                    <input type="text" name="date_of_birth" id="date_of_birth" value="<?= $Hosteller['date_of_birth'] ?>">
+                    <label for="">Contact Number</label>
+                    <input type="text" name="contact_no" id="contact_no" value="<?= $Hosteller['contact_no'] ?>" maxlength="10" minlength="10">
+                    <label for="">Email</label>
+                    <input type="text" name="email" id="email" value="<?= $Hosteller['email'] ?>">
+                    <label for="">Father's Name</label>
+                    <input type="text" name="fathers_name" id="fathers_Name" value="<?= $Hosteller['fathers_name'] ?>">
+                    <button name="submit">Submit</button>
             </form>
         </main>
     </div>

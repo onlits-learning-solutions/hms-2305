@@ -11,7 +11,7 @@ class Room
         $this->connection = new \mysqli(SERVER, USERNAME, PASSWORD, DATABASE);
     }
 
-    public function index()
+    public function index(): array|null
     {
         $sql = "SELECT * FROM room";
         $result = $this->connection->query($sql);
@@ -31,9 +31,9 @@ class Room
         header("location:room.php");
     }
 
-    public function details(int $room_no)
+    public function details(string $room_no)
     {
-        $sql = "SELECT * FROM room WHERE room_no=$room_no";
+        $sql = "SELECT * FROM room WHERE room_no='$room_no'";
         $result = $this->connection->query($sql);
         if ($result->num_rows > 0) {
             return $result->fetch_assoc();
@@ -41,19 +41,19 @@ class Room
         return null;
     } 
 
-    public function delete(int $room_no)
+    public function delete(string $room_no): void
     {
-        $sql = "DELETE FROM room WHERE room_no=$room_no";
+        $sql = "DELETE FROM room WHERE room_no='$room_no'";
         $this->connection->query($sql);
         header("location:room.php");
     }
 
-    public function edit($room)
+    public function edit(array $room): void
     {
     
         $room_no = $room['room_no'];
         $room_type = $room['room_type'];
-        $sql = "UPDATE room SET room_type='$room_type' WHERE room_no=$room_no";
+        $sql = "UPDATE room SET room_type='$room_type' WHERE room_no='$room_no'";
         $this->connection->query($sql);
         header("location:room.php");
     }

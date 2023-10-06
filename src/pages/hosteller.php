@@ -29,17 +29,19 @@ $Hostellers = $Hosteller->index();
             </div>
             <div class="main-content">
                 <h1>List of Hostellers</h1>
-                <a href="new-Hpsteller.php" class="btn btn-primary m-3">New Hosteller</a>
+                <a href="new-Hosteller.php" class="btn btn-primary m-3">New Hosteller</a>
                 <?php
                 if ($Hostellers != null) {
                 ?>
                     <table class="table" cellspacing="0">
                         <tr>
-                            <th>Id</th>
-                            <th>First Name</th>
-                            <th>Middle Name</th>
-                            <th>Last name</th>
+                        <th>Hosteller Id</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Date of Birth</th>
                             <th>Contact Number</th>
+                            <th>Email</th>
+                            <th>Father's Name</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -47,13 +49,15 @@ $Hostellers = $Hosteller->index();
                         foreach ($Hostellers as $Hosteller) {
                         ?>
                             <tr>
-                                <td><?= $Hosteller['id'] ?></td>
-                                <td><?= $Hosteller['first_name'] ?></td>
-                                <td><?= $Hosteller['middle_name'] ?></td>
-                                <td><?= $Hosteller['last_name'] ?></td>
+                            <td><?= $Hosteller['hosteller_id'] ?></td>
+                                <td><?= $Hosteller['name'] ?></td>
+                                <td><?= $Hosteller['gender'] ?></td>
+                                <td><?= $Hosteller['date_of_birth'] ?></td>
                                 <td><?= $Hosteller['contact_no'] ?></td>
-                                <td><a href="<?php echo 'edit-Hosteller.php?id=' . $Hosteller['id'] ?>">Edit</a></td>
-                                <td><a href="<?php echo 'delete-Hosteller.php?id=' . $Hosteller['id'] ?>">Delete</a></td>
+                                <td><?= $Hosteller['email'] ?></td>
+                                <td><?= $Hosteller['fathers_name'] ?></td>
+                                <td><a href="<?php echo 'edit-Hosteller.php?id=' . $Hosteller['hosteller_id'] ?>">Edit</a></td>
+                                <td><a href="<?php echo 'delete-Hosteller.php?id=' . $Hosteller['hosteller_id'] ?>">Delete</a></td>
                             </tr>
                         <?php
                         }
