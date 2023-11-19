@@ -55,6 +55,12 @@ class Allocation
         $this->connection->query($sql);
         header("location:allocation.php");
     }
+    public function delete(int $allocation_id)
+    {
+        $sql = "DELETE FROM Allocation WHERE allocation_id=$allocation_id";
+        $this->connection->query($sql);
+        header("location:allocation.php");
+    }
 
     public function ___descturct()
     {

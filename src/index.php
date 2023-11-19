@@ -68,11 +68,24 @@ if (isset($_POST['login'])) {
         #error_message {
             color: red;
         }
+        body{
+          background-image: url("image.jpg"); 
+          background-size: cover; 
+      }
+
+
+      h1{
+        text-align: center;
+        font-size: 50px;
+        color: yellowgreen;
+      }
+
 
     </style>
 </head>
 
 <body>
+   <h1>Hostel Management System</h1>
     <div class="container">
         <div class="left-pane">
 

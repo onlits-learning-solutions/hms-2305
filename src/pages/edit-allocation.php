@@ -35,17 +35,17 @@ if (isset($_POST['submit'])) {
                 <?php require 'sidebar.php'; ?>
             </div>
             <div class="main-content">
-                <h1>Edit allocation</h1>
+                <h1>Edit Allocation</h1>
                 <form action="" method="post">
-                    <label for="">allocation id</label>
+                    <label for="">Allocation Id</label>
                     <input type="text" name="allocation_id" id="allocation_id" readonly value="<?= $allocation['allocation_id'] ?>">
-                    <label for="">date</label>
+                    <label for="">Date</label>
                     <input type="text" name="date" id="date" value="<?= $allocation['date'] ?>">
-                    <label for="">room no</label>
+                    <label for="">Room No</label>
                     <input type="text" name="room_no" id="room_no" value="<?= $allocation['room_no'] ?>">
-                    <label for="">Hosteller id</label>
+                    <label for="">Hosteller Id</label>
                     <input type="text" name="hosteller id" id="hosteller id" value="<?= $allocation['hosteller_id'] ?>">
-                    <label for="">employee_id </label>
+                    <label for="">Employee Id </label>
                     <input type="text" name="employee id" id="employee id" value="<?= $allocation['employee_id'] ?>">
                     <button name="submit">Submit</button>
                 </form>
