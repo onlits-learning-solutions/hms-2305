@@ -6,6 +6,12 @@
     display: grid;
     grid-template-rows: 50px auto;
 }
+.grid-container {
+    display: grid;
+    grid-template-rows: 40px auto;
+    padding: 5px;
+
+}
 
 .top-nav {
     background-color: brown;
